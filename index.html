@@ -6,8 +6,6 @@
     <title>Rutas de Fútbol Americano - Guía Interactiva</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -17,53 +15,53 @@
 
     <div class="max-w-4xl w-full mx-auto">
         <!-- Cabecera -->
-        <header class="text-center mb-8">
+        <header class="text-center mb-6">
             <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-400 mb-2">
                 🏈 Rutas de Fútbol Americano
             </h1>
             <p class="text-slate-400 text-sm sm:text-base">
-                Explora el árbol de rutas clásico (del 1 al 9) visualmente en el campo.
+                Explora el árbol de rutas clásico (del 1 al 9) visualmente en el campo. Selecciona una ruta para ver su animación.
             </p>
         </header>
 
-        <!-- Selector de Rutas -->
+        <!-- Selector de Rutas (Botones del 1 al 9) -->
         <div class="grid grid-cols-3 sm:grid-cols-9 gap-2 mb-6">
-            <button onclick="selectRoute(1)" id="btn-1" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">1</button>
-            <button onclick="selectRoute(2)" id="btn-2" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">2</button>
-            <button onclick="selectRoute(3)" id="btn-3" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">3</button>
-            <button onclick="selectRoute(4)" id="btn-4" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">4</button>
-            <button onclick="selectRoute(5)" id="btn-5" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">5</button>
-            <button onclick="selectRoute(6)" id="btn-6" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">6</button>
-            <button onclick="selectRoute(7)" id="btn-7" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">7</button>
-            <button onclick="selectRoute(8)" id="btn-8" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">8</button>
-            <button onclick="selectRoute(9)" id="btn-9" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center">9</button>
+            <button onclick="selectRoute(1)" id="btn-1" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">1</button>
+            <button onclick="selectRoute(2)" id="btn-2" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">2</button>
+            <button onclick="selectRoute(3)" id="btn-3" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">3</button>
+            <button onclick="selectRoute(4)" id="btn-4" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">4</button>
+            <button onclick="selectRoute(5)" id="btn-5" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">5</button>
+            <button onclick="selectRoute(6)" id="btn-6" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">6</button>
+            <button onclick="selectRoute(7)" id="btn-7" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">7</button>
+            <button onclick="selectRoute(8)" id="btn-8" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">8</button>
+            <button onclick="selectRoute(9)" id="btn-9" class="route-btn p-3 rounded-xl font-bold border border-slate-800 bg-slate-900 hover:border-emerald-500 transition text-center shadow">9</button>
         </div>
 
         <!-- Campo Visual de Juego -->
         <div class="relative w-full h-80 sm:h-96 bg-emerald-900 rounded-2xl border-4 border-emerald-700 overflow-hidden shadow-2xl mb-6 flex flex-col justify-between p-4">
             <!-- Líneas de yardas simuladas -->
-            <div class="absolute inset-0 flex flex-col justify-around pointer-events-none opacity-20">
-                <div class="border-b border-white w-full h-0"></div>
-                <div class="border-b border-white w-full h-0"></div>
-                <div class="border-b border-white w-full h-0"></div>
-                <div class="border-b border-white w-full h-0"></div>
+            <div class="absolute inset-0 flex flex-col justify-around pointer-events-none opacity-25">
+                <div class="border-b-2 border-dashed border-white w-full h-0"></div>
+                <div class="border-b-2 border-dashed border-white w-full h-0"></div>
+                <div class="border-b-2 border-dashed border-white w-full h-0"></div>
+                <div class="border-b-2 border-dashed border-white w-full h-0"></div>
             </div>
 
-            <!-- Quarterback -->
+            <!-- Quarterback (QB) -->
             <div id="qb-pos" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10 transition-all duration-500">
                 <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white">QB</div>
-                <span class="text-xs bg-slate-900/80 px-2 py-0.5 rounded text-white mt-1">Mariscal</span>
+                <span class="text-xs bg-slate-900/90 px-2 py-0.5 rounded text-white mt-1 font-semibold">Mariscal</span>
             </div>
 
-            <!-- Receptor -->
+            <!-- Receptor (WR) -->
             <div id="wr-pos" class="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10 transition-all duration-700 ease-out">
-                <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white text-slate-950">WR</div>
-                <span id="wr-label" class="text-xs bg-slate-900/80 px-2 py-0.5 rounded text-white mt-1">Ruta 1</span>
+                <div class="w-10 h-10 bg-amber-400 rounded-full flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white text-slate-950">WR</div>
+                <span id="wr-label" class="text-xs bg-slate-900/90 px-2 py-0.5 rounded text-white mt-1 font-semibold">Ruta 1</span>
             </div>
 
-            <!-- Botón de animación -->
-            <div class="absolute top-4 right-4 z-20">
-                <button onclick="animatePlay()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2 rounded-xl shadow-lg transition flex items-center gap-2 text-sm">
+            <!-- Botón de animación flotante -->
+            <div class="absolute top-4 right-4 z-25">
+                <button onclick="animatePlay()" class="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold px-4 py-2 rounded-xl shadow-xl transition flex items-center gap-2 text-sm">
                     ▶ Simular Jugada
                 </button>
             </div>
@@ -82,21 +80,21 @@
                 type: "Corta / Afuera",
                 desc: "El receptor corre unos pasos hacia adelante y gira de inmediato hacia la línea de banda exterior, ganando terreno rápido.",
                 tip: "Ideal para situaciones de presión rápida o para conseguir yardas después de la recepción con espacio libre.",
-                style: { bottom: '20px', left: '75%' }
+                style: { bottom: '30px', left: '78%' }
             },
             2: {
                 name: "2 - Slant (Diagonal)",
                 type: "Corta / Adentro",
                 desc: "Corre verticalmente y hace un corte rápido en diagonal de 45 grados hacia el centro del campo.",
                 tip: "Muy difícil de defender contra una cobertura de hombre a hombre si el receptor es ágil.",
-                style: { bottom: '60px', left: '35%' }
+                style: { bottom: '80px', left: '32%' }
             },
             3: {
                 name: "3 - Comeback (Regreso)",
                 type: "Media / Afuera",
                 desc: "Corre verticalmente unas 10-12 yardas, frena en seco y se da la vuelta hacia el pasador.",
                 tip: "Requiere excelente coordinación entre el mariscal y el receptor para lanzar el balón antes del giro.",
-                style: { bottom: '200px', left: '80%' }
+                style: { bottom: '210px', left: '82%' }
             },
             4: {
                 name: "4 - Curl / Hook (Gancho)",
@@ -110,67 +108,66 @@
                 type: "Media / Afuera",
                 desc: "Corre verticalmente unas 10 yardas y hace un corte exacto de 90 grados hacia la línea de banda.",
                 tip: "El corte debe ser limpio y sin frenar antes de girar para ganarle la espalda al defensivo.",
-                style: { bottom: '200px', left: '90%' }
+                style: { bottom: '210px', left: '90%' }
             },
             6: {
                 name: "6 - In / Dig (Adentro)",
                 type: "Media / Adentro",
                 desc: "Corre verticalmente unas 10 yardas y realiza un corte de 90 grados exactos hacia el centro del campo.",
                 tip: "Pase de mucha confianza para cruzar por el medio de los apoyadores centrales.",
-                style: { bottom: '200px', left: '30%' }
+                style: { bottom: '210px', left: '25%' }
             },
             7: {
                 name: "7 - Corner / Flag (Esquina)",
                 type: "Profunda / Afuera",
                 desc: "Corre verticalmente por la banda y quiebra en diagonal hacia la esquina exterior de la zona de anotación.",
                 tip: "Pase profundo letal si logras aislar al defensivo en el perímetro.",
-                style: { bottom: '270px', left: '85%' }
+                style: { bottom: '280px', left: '88%' }
             },
             8: {
                 name: "8 - Post (Poste)",
                 type: "Profunda / Adentro",
                 desc: "Corre verticalmente en profundidad y hace un corte en diagonal apuntando hacia los postes centrales.",
-                tip: "Diseñado para atacar las debilidades entre los profundos (*safeties*) del centro.",
-                style: { bottom: '270px', left: '40%' }
+                tip: "Diseñado para atacar las debilidades entre los profundos (safeties) del centro.",
+                style: { bottom: '280px', left: '42%' }
             },
             9: {
                 name: "9 - Go / Fly (Profunda)",
                 type: "Profunda / Directa",
                 desc: "La ruta más directa. El receptor corre en línea recta a máxima velocidad buscando la anotación profunda.",
                 tip: "Requiere velocidad pura y ganarle la partida al esquinero desde la salida.",
-                style: { bottom: '280px', left: '50%' }
+                style: { bottom: '290px', left: '50%' }
             }
         };
 
         function selectRoute(num) {
-            // Actualizar botones
             document.querySelectorAll('.route-btn').forEach(btn => {
                 btn.classList.remove('bg-emerald-500', 'text-slate-950', 'border-emerald-400');
-                btn.classList.add('bg-slate-950', 'text-slate-100');
+                btn.classList.add('bg-slate-900', 'text-slate-100');
             });
             const activeBtn = document.getElementById(`btn-${num}`);
-            activeBtn.classList.remove('bg-slate-950', 'text-slate-100');
+            activeBtn.classList.remove('bg-slate-900', 'text-slate-100');
             activeBtn.classList.add('bg-emerald-500', 'text-slate-950', 'border-emerald-400');
 
-            // Actualizar posición visual inicial del receptor
             const wr = document.getElementById('wr-pos');
             wr.style.bottom = '20px';
             wr.style.left = '50%';
 
-            // Actualizar panel de información
             const data = routesData[num];
+            document.getElementById('wr-label').innerText = `Ruta ${num}`;
+            
             const infoContainer = document.getElementById('route-info');
             infoContainer.innerHTML = `
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950 px-3 py-1 rounded-full border border-emerald-800">${data.type}</span>
-                        <h2 class="text-2xl font-bold mt-2 text-white">${data.name}</h2>
+                        <h2 class="text-2xl font-extrabold mt-2 text-white">${data.name}</h2>
                     </div>
                 </div>
-                <p class="text-slate-300 mb-4 leading-relaxed">${data.desc}</p>
-                <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80 flex items-start gap-3">
-                    <span class="text-amber-400 font-bold">💡 Pro Tip:</span>
-                    <p class="text-sm text-slate-400">${data.tip}</p>
+                <p class="text-slate-300 mb-4 leading-relaxed text-sm sm:text-base">${data.desc}</p>
+                <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800 flex items-start gap-3">
+                    <span class="text-amber-400 font-bold shrink-0">💡 Pro Tip:</span>
+                    <p class="text-xs sm:text-sm text-slate-400">${data.tip}</p>
                 </div>
             `;
             
@@ -181,7 +178,6 @@
             const wr = document.getElementById('wr-pos');
             if (!window.currentRouteStyle) return;
             
-            // Volver al inicio antes de animar
             wr.style.bottom = '20px';
             wr.style.left = '50%';
 
@@ -191,7 +187,6 @@
             }, 100);
         }
 
-        // Cargar por defecto la ruta 1 al abrir
         window.onload = () => {
             selectRoute(1);
         };
